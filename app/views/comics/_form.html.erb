@@ -1,0 +1,29 @@
+<%= simple_form_for(@comic) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :finished %>
+      <%= f.input :artist %>
+      <%= f.association :category %>
+      <%= f.input :translator %>
+      <%= f.input :publish %>
+      <%= f.input :x_rated %>
+      <%= f.fields_for :pages do |page| %>
+
+          <% if page.object.new_record? %>
+              <%= page.file_field :attachment %>
+          <% else %>
+              <div class="thumbnail">
+                <%= link_to(image_tag(page.object.attachment.url(:thumb)), page.object.attachment.url(:original)) %>
+                <%= page.check_box :_destroy %>
+              </div>
+          <% end %>
+      <% end %>
+    </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+<% end %>

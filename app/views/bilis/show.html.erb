@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Page:</b>
+  <%= @bili.page %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @bili.user %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @bili.content %>
+</p>
+
+<p>
+  <b>X:</b>
+  <%= @bili.x %>
+</p>
+
+<p>
+  <b>Y:</b>
+  <%= @bili.y %>
+</p>
+
+
+<%= link_to 'Edit', edit_bili_path(@bili) %> |
+<%= link_to 'Back', bilis_path %>

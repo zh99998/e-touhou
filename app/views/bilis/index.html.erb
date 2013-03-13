@@ -1,0 +1,31 @@
+<h1>Listing bilis</h1>
+
+<table>
+  <tr>
+    <th>Page</th>
+    <th>User</th>
+    <th>Content</th>
+    <th>X</th>
+    <th>Y</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bilis.each do |bili| %>
+  <tr>
+    <td><%= bili.page %></td>
+    <td><%= bili.user %></td>
+    <td><%= bili.content %></td>
+    <td><%= bili.x %></td>
+    <td><%= bili.y %></td>
+    <td><%= link_to 'Show', bili %></td>
+    <td><%= link_to 'Edit', edit_bili_path(bili) %></td>
+    <td><%= link_to 'Destroy', bili, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bili', new_bili_path %>

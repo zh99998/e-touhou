@@ -5,4 +5,9 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, :alert => exception.message
   end
 
+  before_filter :set_locale
+  include HttpAcceptLanguage #WTF?!
+  def set_locale
+    I18n.locale = preferred_language_from(%w{zh-CN})
+  end
 end

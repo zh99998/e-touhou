@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @comic.name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= render @comic.user %>
+</p>
+
+<p>
+  <b>Finished:</b>
+  <%= @comic.finished %>
+</p>
+
+<p>
+  <b>Artist:</b>
+  <%= @comic.artist %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= link_to @comic.category.name, @comic.category %>
+</p>
+
+<p>
+  <b>Translator:</b>
+  <%= @comic.translator %>
+</p>
+
+<p>
+  <b>Publish:</b>
+  <%= @comic.publish %>
+</p>
+
+<p>
+  <b>X rated:</b>
+  <%= @comic.x_rated %>
+</p>
+
+<p>
+  <b>Under review:</b>
+  <%= @comic.under_review %>
+</p>
+
+<% @comic.pages.each do |page| %>
+    <%= link_to(image_tag(page.attachment.url(:thumb)), comic_page_path(@comic, page)) %>
+<% end %>
+
+<h2>Comments</h2>
+<% @comic.comments.each do |comment| %>
+    <p>
+      <b>Commenter:</b>
+      <%= render comment.user %>
+    </p>
+
+    <p>
+      <b>Comment:</b>
+      <%= comment.content %>
+    </p>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_for([@comic, @comic.comments.build]) do |f| %>
+    <div class="field">
+      <%= f.label :content %><br />
+      <%= f.text_area :content %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+<%= link_to 'Edit', edit_comic_path(@comic) %> |
+<%= link_to 'Back', comics_path %>

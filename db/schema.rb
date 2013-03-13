@@ -11,7 +11,73 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130312083628) do
+ActiveRecord::Schema.define(:version => 20130313085355) do
+
+  create_table "bilis", :force => true do |t|
+    t.integer  "page_id"
+    t.integer  "user_id"
+    t.text     "content"
+    t.integer  "x"
+    t.integer  "y"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "bilis", ["page_id"], :name => "index_bilis_on_page_id"
+  add_index "bilis", ["user_id"], :name => "index_bilis_on_user_id"
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "characters", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "comics", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.boolean  "finished"
+    t.string   "artist"
+    t.integer  "category_id"
+    t.string   "translator"
+    t.string   "publish"
+    t.boolean  "x_rated"
+    t.boolean  "under_review"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "comics", ["category_id"], :name => "index_comics_on_category_id"
+  add_index "comics", ["user_id"], :name => "index_comics_on_user_id"
+
+  create_table "comments", :force => true do |t|
+    t.integer  "comic_id"
+    t.string   "user"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "comments", ["comic_id"], :name => "index_comments_on_comic_id"
+
+  create_table "pages", :force => true do |t|
+    t.integer  "comic_id"
+    t.integer  "user_id"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+  end
+
+  add_index "pages", ["comic_id"], :name => "index_pages_on_comic_id"
+  add_index "pages", ["user_id"], :name => "index_pages_on_user_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"

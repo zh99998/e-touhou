@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Comic:</b>
+  <%= @page.comic %>
+  <%= image_tag(@page.attachment.url(:large)) %>
+</p>
+
+
+<h2>Comments</h2>
+<% @page.bilis.each do |bili| %>
+    <p>
+      <b>Commenter:</b>
+      <%= render bili.user %>
+    </p>
+
+    <p>
+      <b>Comment:</b>
+      <%= bili.content %>
+    </p>
+<% end %>
+
+<h2>Add a comment:</h2>
+
+
+<%= simple_form_for([@page, @page.bilis.build], :url => comic_page_bilis_path(@page.comic, @page)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :x %>
+      <%= f.input :y %>
+      <%= f.input :content %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_comic_page_path(@page.comic, @page) %> |
+<%= link_to 'Back', @page.comic %>

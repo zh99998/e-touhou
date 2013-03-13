@@ -1,0 +1,18 @@
+zh-CN:
+  activerecord:
+    models:
+      user: 用户
+      comic: 漫画
+    attributes:
+      comic:
+        name: 漫画名称
+        user: 用户
+        finished: 连载状态
+        artist: 出品社团
+        translator: 翻译社团
+        category: 漫画类型
+        publish: 首发会场
+        x_rated: 限制级
+        under_review: 审核中
+      user:
+        login: 登录
