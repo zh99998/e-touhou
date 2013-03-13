@@ -81,4 +81,15 @@ class ComicsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def tagged
+    #if params[:tag].present?
+      @comics = Comic.tagged_with(params[:tag])
+    #else
+    #  @comics = Comic.postall
+    #end
+  end
+  def tag_cloud
+    @tags = Comic.tag_counts_on(:tags)
+  end
 end

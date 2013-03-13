@@ -10,6 +10,9 @@ ETouhou::Application.routes.draw do
     resources :comments
   end
 
+  match 'tags' => 'comics#tag_cloud'
+  match 'tags/:tag' => 'comics#tagged', :as => 'tagged'
+
   resources :comments
 
 

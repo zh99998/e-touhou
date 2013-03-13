@@ -9,6 +9,7 @@
       <%= f.input :translator %>
       <%= f.input :publish %>
       <%= f.input :x_rated %>
+      <%= f.input :tag_list, label: Comic.human_attribute_name(:tags) %>
       <%= f.fields_for :pages do |page| %>
 
           <% if page.object.new_record? %>

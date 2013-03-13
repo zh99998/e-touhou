@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'paperclip'
 gem 'devise-i18n'
 gem 'http_accept_language'
+gem 'acts-as-taggable-on', '~> 2.3.1'
 
 gem 'rails', '3.2.12'
 gem 'pg'
