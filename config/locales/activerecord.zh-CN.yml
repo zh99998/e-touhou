@@ -3,6 +3,12 @@ zh-CN:
     models:
       user: 用户
       comic: 漫画
+      category: 分类
+      character: 角色
+      comment: 评论
+      page: 页面
+      role: 用户组
+      bili: 吐槽
     attributes:
       comic:
         name: 漫画名称
@@ -14,5 +20,9 @@ zh-CN:
         publish: 首发会场
         x_rated: 限制级
         under_review: 审核中
+        created_at: 创建时间
+        updated_at: 修改时间
+        pages: 页面
+        comments: 评论
       user:
         login: 登录

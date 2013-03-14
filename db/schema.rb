@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130313121230) do
+ActiveRecord::Schema.define(:version => 20130314020208) do
 
   create_table "bilis", :force => true do |t|
     t.integer  "page_id"
@@ -78,6 +78,19 @@ ActiveRecord::Schema.define(:version => 20130313121230) do
 
   add_index "pages", ["comic_id"], :name => "index_pages_on_comic_id"
   add_index "pages", ["user_id"], :name => "index_pages_on_user_id"
+
+  create_table "rails_admin_histories", :force => true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 8
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "roles", :force => true do |t|
     t.string   "name"

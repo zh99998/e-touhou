@@ -1,4 +1,6 @@
 ETouhou::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   root :to => "comics#index"
   #resources :pages
 
@@ -22,10 +24,10 @@ ETouhou::Application.routes.draw do
   resources :categories
 
 
-  authenticated :user do
-    root :to => 'home#index'
-  end
-  root :to => "home#index"
+  #authenticated :user do
+  #  root :to => 'home#index'
+  #end
+  #root :to => "home#index"
   devise_for :users
   resources :users
 end
