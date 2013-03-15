@@ -24,10 +24,10 @@ ETouhou::Application.routes.draw do
   resources :categories
 
 
-  #authenticated :user do
-  #  root :to => 'home#index'
-  #end
-  #root :to => "home#index"
+  authenticated :user do
+    root :to => 'comics#index'
+  end
+  root :to => "comics#index"
   devise_for :users
   resources :users
 end
