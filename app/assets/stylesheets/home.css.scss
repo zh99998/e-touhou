@@ -1,3 +1,120 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* ----------------------------------
+Design by:Charlotte
+www.thfans.com
+----------------------------------*/
+/*滚动条 只支持chrome 个人比较喜欢,就是页面缩放以后会变得很细或者很粗不知道为什么,不喜欢可以删了..*/
+::-webkit-scrollbar-track-piece{
+  background-color:#F3F3F3;/*滚动条的背景颜色*/
+  -webkit-border-radius:0;/*滚动条的圆角宽度*/}
+::-webkit-scrollbar{
+  width:18px;/*滚动条的宽度*/}
+::-webkit-scrollbar-thumb:vertical{/*垂直滚动条的样式*/
+  height:50px;
+  background-color:#999;
+  -webkit-border-radius:4px;
+  outline:0px solid #fff;
+  outline-offset:-1px;
+  border: 2px solid #fff;}
+::-webkit-scrollbar-thumb:hover{/*滚动条的hover样式*/
+  height:50px;
+  background-color:#BDBDBD;
+  -webkit-border-radius:4px;}
+::-webkit-scrollbar-thumb:horizontal{/*水平滚动条的样式*/
+  height:50px;
+  background-color:#999;
+  -webkit-border-radius:4px;
+  outline:0px solid #fff;
+  outline-offset:-1px;
+  border: 2px solid #fff;}
+/*全局*/
+body{background: #FCFCFC;}
+body, input, button, select, textarea{font: 12px/1.5 'Tahoma','Microsoft Yahei','Simsun';color: #444;}
+input, select, textarea, button, h1, h2, h3, h4, h5, h6, strong, label, img, em, p, span, a, .ef, .score, .score2{
+  -webkit-transition:all 0.5s ease 0s;
+  -o-transition:all 0.5s ease 0s;
+  -moz-transition:all 0.5s ease 0s;
+  transition:all 0.5s ease 0s;}
+.score, .score2{-webkit-transition:all 0.3s ease 0s;
+  -o-transition:all 0.3s ease 0s;
+  -moz-transition:all 0.3s ease 0s;
+  transition:all 0.3s ease 0s;}
+a{text-decoration: none!important;outline: none;color: #7E7E7E;}
+a img{ border:none}
+a:hover{color:#F06;}
+ul, li{list-style: none;}
+h1, h2, h3, h4, h5, h6{font-weight: 100;font-size: 16px;}
+table{border-collapse:separate;}
+em{font-style: normal;}
+/* 通用边框特效 */
+.ef{
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  behavior: url(border-radius.htc);
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 8px rgba(68, 68, 68, 0.25);
+  -webkit-box-shadow: 0 0 8px rgba(68, 68, 68, 0.25);
+  -moz-box-shadow: 0 0 8px rgba(68,68,68,0.25);
+  border: 1px solid #CDCDCD;}
+/*标题栏*/
+.subtitle{height:25px;margin-bottom:10px;}
+.subtitle h1{font-size:16px;}
+.subtitle h1 em{font-size:22px;}
+/*正文*/
+.main{width:1000px; margin:0 auto;}
+.mn{margin-top:10px;}
+.right .mn{margin-top:25px;}
+.left{width:795px; margin-right:5px; float:left;}
+.right{width:195px; float:right;}
+.index{height:930px;}
+.tag_hot{height:270px;}
+.ps{margin-bottom: 15px;float: left;}
+.ps_i{padding:5px; float:left; margin-left:11px;}
+.ps_i:hover{border: 1px solid rgba(0, 173, 255, 0.31);box-shadow: 0 0 8px rgba(0, 163, 255, 0.49);-webkit-box-shadow: 0 0 8px rgba(0, 163, 255, 0.49);-moz-box-shadow: 0 0 8px rgba(0, 163, 255, 0.49);}
+.ps_i img{width:170px; height:227px;}
+.bm_t{margin-left:40px;}
+.bm_h{border-bottom: 4px dashed lightGrey;margin-left:20px;font-size: 20px;text-shadow: 1px 1px 3px rgba(192, 192, 192, 0.83);height: 50px;}
+.bm_h span{line-height: 65px;}
+.bm_h a{color:#CDCDCD;}
+.bm_h a:hover{color:#F06;}
+.dbar{width:250px; height:265px;}
+.dbar ul{width: 100%;padding: 3px;margin: 0px;}
+.dbar li{float: left;padding: 0px;margin: 2px;}
+.dbar_img{width:75px;}
+.dbar_img img{width:75px;height:100px;padding:4px;}
+.dbar_img a{width:100%;float:left;text-align:center;}
+.dbar_img:hover a{color:#F06;}
+.top_slider{margin-left:8px;}
+.score{position: absolute;top: auto;margin: 82px 4px 0 4px;;width: 75px;height: 20px;background: rgba(0, 0, 0, 0.24);opacity: 0;color: white;text-shadow: 0 1px 1px #4E4E4E;display:none\0;background:#BDBDBD\0;}
+.score2{position: absolute;top: auto;margin: -40px 4px 0 6px;width: 75px;height: 40px;background: rgba(0, 0, 0, 0.24);opacity: 0;color: white;text-shadow: 0 1px 1px #4E4E4E;display:none\0;background:#BDBDBD\0;}
+.dbar_img:hover .score{margin-top:72px;opacity: 1;display:block\0;}
+.fr_img li:hover .score2{margin-top:-50px;opacity:1;display:block\0;}
+.score span{position: relative;bottom: 114px;left: 2px;}
+.score_l{float:left;margin:0 0 0 3px;}
+.score_r{float:right;margin:0 3px 0 0;}
+.score_t{float: left;text-align: center;margin: 0;width: 100%;}
+/*热点*/
+.hot{height: 340px;}
+.hot_h{background:url("logo_hot.png") no-repeat 0 6px;}
+.top_rated{height:270px;float:left;margin-left: 17px; margin-top:5px;}
+.top_view{height:270px;float:left;margin-left:10px; margin-top:5px;}
+.new_release{height:270px;float:left;margin-left:10px; margin-top:5px;}
+/*搞笑*/
+.funny{height:300px;}
+.funny_h{background:url("logo_funny.png") no-repeat 0 6px;}
+.funny a{text-align:center;}
+.fl_img{float:left;padding:8px;width:150px;height:200px;margin:20px 0 0 20px;}
+.fl_img:hover{border: 1px solid rgba(0, 173, 255, 0.31);box-shadow: 0 0 8px rgba(0, 163, 255, 0.49);-webkit-box-shadow: 0 0 8px rgba(0, 163, 255, 0.49);-moz-box-shadow: 0 0 8px rgba(0, 163, 255, 0.49);}
+.fl_img:hover a{color:#F06;}
+.fr_img{height:270px;width:590px;float:right;margin-top:12px;}
+.fr_img img:hover{border: 1px solid rgba(0, 173, 255, 0.31);box-shadow: 0 0 8px rgba(0, 163, 255, 0.49);-webkit-box-shadow: 0 0 8px rgba(0, 163, 255, 0.49);-moz-box-shadow: 0 0 8px rgba(0, 163, 255, 0.49);}
+.fr_img ul{width: 100%;padding: 3px;margin: 0px;}
+.fr_img li{float:left;margin:5px;}
+.fr_img img{width:75px;height:100px;padding:5px;}
+/*治愈*/
+.inspire{height:300px;}
+.inspire a{text-align:center;}
+.inspire_h{background:url("logo_inspire.png") no-repeat 0 6px;}
+/*右侧栏*/
+.right h1{font-size: 20px;margin:0px;text-shadow: 1px 1px 3px rgba(163, 0, 33, 0.42);color:#F06;}

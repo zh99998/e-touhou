@@ -1,7 +1,7 @@
 ETouhou::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  root :to => "comics#index"
+  root :to => "home#index"
   #resources :pages
 
 

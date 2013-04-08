@@ -11,6 +11,7 @@ class Comic < ActiveRecord::Base
   validates :user, :presence => true
   validates :category, :presence => true
   validates :name, :presence => true
+  validates :pages, :length => { :minimum => 1 }
 
   acts_as_taggable
 end

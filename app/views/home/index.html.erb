@@ -1,4 +1,413 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+<div class="main">
+<!--左侧板块-->
+<div class="left">
+<table class="top_slider">
+  <tbody>
+  <tr class="ps">
+    <% Comic.limit(4).each do |comic| %>
+        <td class="ef ps_i">
+          <%= link_to(image_tag(comic.pages.first.attachment.url(:large)), comic) %>
+        </td>
+    <% end %>
+  </tr>
+  </tbody>
+</table>
+<!--热点-->
+<div class="mn">
+  <div class="bm_h hot_h">
+    <div class="bm_t">
+      <span style="color: #FF8F00;">热点</span><span style="color:#8B8B8B;">&nbsp;/&nbsp;</span><a href="#">更多</a>
+    </div>
+  </div>
+  <div class="hot">
+    <div class="top_rated">
+      <div class="subtitle">
+        <h1><em>最</em>高评分</h1>
+      </div>
+      <div class="dbar ef">
+        <ul>
+          <% Comic.limit(6).each do |comic| %>
+              <li class="dbar_img">
+                <a href="#" target="_blank">
+                  <%= link_to(image_tag(comic.pages.first.attachment.url(:thumb)), comic) %>
+                </a>
+
+                <p><a href="#" target="_blank">漫画名</a></p>
+
+                <div class="score"><p class="score_l">20p</p>
+
+                  <p class="score_r">+998</p></div>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="top_view">
+      <div class="subtitle">
+        <h1><em>最</em>高点击</h1>
+      </div>
+      <div class="dbar ef">
+        <ul>
+          <% Comic.limit(6).each do |comic| %>
+              <li class="dbar_img">
+                <a href="#" target="_blank">
+                  <%= link_to(image_tag(comic.pages.first.attachment.url(:thumb)), comic) %>
+                </a>
+
+                <p><a href="#" target="_blank">漫画名</a></p>
+
+                <div class="score"><p class="score_l">20p</p>
+
+                  <p class="score_r">+998</p></div>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="new_release">
+      <div class="subtitle">
+        <h1><em>最</em>新发布</h1>
+      </div>
+      <div class="dbar ef">
+        <ul>
+          <% Comic.limit(6).each do |comic| %>
+              <li class="dbar_img">
+                <a href="#" target="_blank">
+                  <%= link_to(image_tag(comic.pages.first.attachment.url(:thumb)), comic) %>
+                </a>
+
+                <p><a href="#" target="_blank">漫画名</a></p>
+
+                <div class="score"><p class="score_l">20p</p>
+
+                  <p class="score_r">+998</p></div>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--热点结束-->
+<!--搞笑-->
+<div class="mn">
+  <div class="bm_h funny_h">
+    <div class="bm_t">
+      <span style="color:#01CA32;">搞笑</span><span style="color:#8B8B8B;">&nbsp;/&nbsp;</span><a href="#">更多</a>
+    </div>
+  </div>
+  <div class="funny">
+    <div class="ef fl_img">
+      <a href="#" target="_blank"><img src="150x200.jpg"></a>
+      <a href="#" target="_blank"><h2>漫画名</h2></a>
+    </div>
+    <div class="fr_img">
+      <ul>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!--搞笑结束-->
+<!--治愈-->
+<div class="mn">
+  <div class="bm_h inspire_h">
+    <div class="bm_t">
+      <span style="color:#12AAFF;">治愈</span><span style="color:#8B8B8B;">&nbsp;/&nbsp;</span><a href="#">更多</a>
+    </div>
+  </div>
+  <div class="inspire">
+    <div class="ef fl_img">
+      <a href="#" target="_blank"><img src="150x200.jpg"></a>
+      <a href="#" target="_blank"><h2>漫画名</h2></a>
+    </div>
+    <div class="fr_img">
+      <ul>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img class="ef" src="75x100.jpg">
+          </a>
+
+          <div class="score2"><p class="score_l">20p</p>
+
+            <p class="score_r">+998</p>
+
+            <p class="score_t">漫画名</p></div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+<!--治愈结束-->
+</div>
+<!--右侧板块-->
+<div class="right">
+  <h1>索引</h1>
+
+  <div class="index ef">
+  </div>
+  <div class="mn">
+    <h1>热门TAG</h1>
+
+    <div class="tag_hot ef">
+    </div>
+  </div>
+</div>
+</div>
