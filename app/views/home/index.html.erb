@@ -95,7 +95,7 @@
           </div>
           <div class="funny">
             <div class="ef fl_img">
-              <%= link_to(category.comics.first.pages.order(:id).first.attachment.url(:small), category.comics.first) %>
+              <%= link_to(image_tag(category.comics.first.pages.order(:id).first.attachment.url(:small)), category.comics.first) %>
               <%= link_to(category.comics.first.name, category.comics.first) %>
             </div>
             <div class="fr_img">
