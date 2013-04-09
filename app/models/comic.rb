@@ -14,4 +14,5 @@ class Comic < ActiveRecord::Base
   validates :pages, :length => { :minimum => 1 }
 
   acts_as_taggable
+  acts_as_votable
 end

@@ -34,9 +34,9 @@
 
                     <p><a href="#" target="_blank">漫画名</a></p>
 
-                    <div class="score"><p class="score_l">20p</p>
+                    <div class="score"><p class="score_l"><%= comic.pages.count %>p</p>
 
-                      <p class="score_r">+998</p></div>
+                      <p class="score_r">+<%= comic.likes.size %></p></div>
                   </li>
               <% end %>
             </ul>
@@ -54,9 +54,9 @@
                     <%= link_to(image_tag(comic.pages.order(:id).first.attachment.url(:thumb)), comic) %>
                     <p><%= link_to(comic.name, comic, :target => :_blank) %></p>
 
-                    <div class="score"><p class="score_l">20p</p>
+                    <div class="score"><p class="score_l"><%= comic.pages.count %>p</p>
 
-                      <p class="score_r">+998</p></div>
+                      <p class="score_r">+<%= comic.likes.size %></p></div>
                   </li>
               <% end %>
             </ul>
@@ -74,9 +74,9 @@
                     <%= link_to(image_tag(comic.pages.order(:id).first.attachment.url(:thumb)), comic) %>
                     <p><%= link_to(comic.name, comic, :target => :_blank) %></p>
 
-                    <div class="score"><p class="score_l">20p</p>
+                    <div class="score"><p class="score_l"><%= comic.pages.count %>p</p>
 
-                      <p class="score_r">+998</p></div>
+                      <p class="score_r">+<%= comic.likes.size %></p></div>
                   </li>
               <% end %>
             </ul>
@@ -104,8 +104,8 @@
                     <li>
                       <%= link_to(image_tag(comic.pages.order(:id).first.attachment.url(:thumb), :class => 'ef'), comic, :target => :_blank) %>
                       <div class="score2">
-                        <p class="score_l">20p</p>
-                        <p class="score_r">+998</p>
+                        <p class="score_l"><%= comic.pages.count %>p</p>
+                        <p class="score_r">+<%= comic.likes.size %></p>
                         <p class="score_t"><%= comic.name %></p>
                       </div>
                     </li>
