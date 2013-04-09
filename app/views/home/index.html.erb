@@ -6,7 +6,7 @@
       <tr class="ps">
         <% Comic.limit(4).each do |comic| %>
             <td class="ef ps_i">
-              <%= link_to(image_tag(comic.pages.first.attachment.url(:large)), comic) %>
+              <%= link_to(image_tag(comic.pages.order(:id).first.attachment.url(:large)), comic) %>
             </td>
         <% end %>
       </tr>
@@ -29,7 +29,7 @@
               <% Comic.limit(6).each do |comic| %>
                   <li class="dbar_img">
                     <a href="#" target="_blank">
-                      <%= link_to(image_tag(comic.pages.first.attachment.url(:thumb)), comic) %>
+                      <%= link_to(image_tag(comic.pages.order(:id).first.attachment.url(:thumb)), comic) %>
                     </a>
 
                     <p><a href="#" target="_blank">漫画名</a></p>
@@ -51,7 +51,7 @@
             <ul>
               <% Comic.limit(6).each do |comic| %>
                   <li class="dbar_img">
-                    <%= link_to(image_tag(comic.pages.first.attachment.url(:thumb)), comic) %>
+                    <%= link_to(image_tag(comic.pages.order(:id).first.attachment.url(:thumb)), comic) %>
                     <p><%= link_to(comic.name, comic, :target => :_blank) %></p>
 
                     <div class="score"><p class="score_l">20p</p>
@@ -71,7 +71,7 @@
             <ul>
               <% Comic.limit(6).each do |comic| %>
                   <li class="dbar_img">
-                    <%= link_to(image_tag(comic.pages.first.attachment.url(:thumb)), comic) %>
+                    <%= link_to(image_tag(comic.pages.order(:id).first.attachment.url(:thumb)), comic) %>
                     <p><%= link_to(comic.name, comic, :target => :_blank) %></p>
 
                     <div class="score"><p class="score_l">20p</p>
@@ -86,7 +86,7 @@
     </div>
     <!--热点结束-->
     <!--搞笑-->
-    <% Category.all.each do |category| %>
+    <% Category.includes(:joins).group('comics.id').each do |category| %>
         <div class="mn">
           <div class="bm_h funny_h">
             <div class="bm_t">
@@ -95,14 +95,14 @@
           </div>
           <div class="funny">
             <div class="ef fl_img">
-              <%= link_to(category.comics.first.pages.first.attachment.url(:small), category.comics.first) %>
+              <%= link_to(category.comics.first.pages.order(:id).first.attachment.url(:small), category.comics.first) %>
               <%= link_to(category.comics.first.name, category.comics.first) %>
             </div>
             <div class="fr_img">
               <ul>
                 <% category.comics.offset(1).limit(12).each_with_index do |comic| %>
                     <li>
-                      <%= link_to(image_tag(comic.pages.first.attachment.url(:thumb), :class => 'ef'), comic, :target => :_blank) %>
+                      <%= link_to(image_tag(comic.pages.order(:id).first.attachment.url(:thumb), :class => 'ef'), comic, :target => :_blank) %>
                       <div class="score2"><p class="score_l">20p</p>
 
                         <p class="score_r">+998</p>
