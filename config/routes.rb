@@ -27,7 +27,7 @@ ETouhou::Application.routes.draw do
   authenticated :user do
     root :to => 'comics#index'
   end
-  root :to => "comics#index"
+  #root :to => "comics#index"
   devise_for :users
   resources :users
 end
