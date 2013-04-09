@@ -86,7 +86,7 @@
     </div>
     <!--热点结束-->
     <!--搞笑-->
-    <% Category.includes(:comics).having('COUNT(comic.id) > 0').group('category.id').each do |category| %>
+    <% Category.includes(:comics).having('COUNT(comics.id) > 0').group('categories.id').each do |category| %>
         <div class="mn">
           <div class="bm_h funny_h">
             <div class="bm_t">
