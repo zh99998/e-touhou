@@ -126,6 +126,9 @@
       <h1>热门TAG</h1>
 
       <div class="tag_hot ef">
+        <% tag_cloud(Comic.tag_counts_on(:tags), %w(css1 css2 css3 css4)) do |tag, css_class| %>
+            <%= link_to tag.name, { :action => :tagged, :tag => tag.name }, :class => css_class %>
+        <% end %>
       </div>
     </div>
   </div>
