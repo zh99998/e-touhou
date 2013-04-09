@@ -88,9 +88,9 @@
     <!--搞笑-->
     <% Category.joins(:comics).group('categories.id').each do |category| %>
         <div class="mn">
-          <div class="bm_h funny_h">
+          <div class="bm_h funny_h" style="background-image: url(<%= category.icon.url %>);">
             <div class="bm_t">
-              <span style="color:#01CA32;"><%= category.name %></span><span style="color:#8B8B8B;">&nbsp;/&nbsp;</span><%= link_to('更多', category) %>
+              <span style="<%= category.style %>"><%= category.name %></span><span style="color:#8B8B8B;">&nbsp;/&nbsp;</span><%= link_to('更多', category) %>
             </div>
           </div>
           <div class="funny">

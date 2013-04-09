@@ -1,11 +1,15 @@
 <%= simple_form_for(@category) do |f| %>
-  <%= f.error_notification %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :name %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    <div class="form-inputs">
+      <%= form.file_field :icon %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
 <% end %>
